@@ -1,0 +1,7 @@
+{
+  "@midgar/route": {
+    "enabled": true,
+    "path": "../../.."
+  },
+  "test": { "local": true }
+}
