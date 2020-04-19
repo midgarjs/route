@@ -253,8 +253,7 @@ class RoutePlugin extends Plugin {
 
     if (!name) throw new Error(`Missing .name inside file ${validatorModule.path}`)
     if (!ValidatorClass) throw new Error(`Missing .validator inside file ${validatorModule.path}`)
-
-    this.validators[name] = await this._createModuleInstance(ValidatorClass, services, { name })
+    this.validators[name] = await this._createModuleInstance(ValidatorClass, services, { name, routePlugin: this })
   }
 
   /**
@@ -398,9 +397,6 @@ class RoutePlugin extends Plugin {
 
       // Before exec route
       await router.beforeCallRoute(route, req, res)
-      if (router.controller) {
-        await router.controller.beforeCallRoute(route, req, res)
-      }
       next()
     }
   }

@@ -38,17 +38,6 @@ class Controller extends Abstract {
    * @return {Promise<void>}
    */
   async init() {}
-
-  /**
-   * Before call route hook
-   *
-   * @param {Route}    route Route object
-   * @param {Request}  req   Express request object
-   * @param {Response} res   Express responde object
-   *
-   * @return {Promise<void>}
-   */
-  async beforeCallRoute(route, req, res) {}
 }
 
 export default Controller

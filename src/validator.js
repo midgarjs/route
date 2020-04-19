@@ -22,6 +22,14 @@ class Validator {
      * @type {Midgar}
      */
     this.mid = mid
+
+    /**
+     * Route plugin instance
+     * This property is route plugin
+     * after create an instance of this class
+     * @type {RoutePlugin}
+     */
+    this.routePlugin = null
   }
 
   /**
@@ -30,6 +38,17 @@ class Validator {
    * @return {Promise<void>}
    */
   async init() {}
+
+  /**
+   * Return a validator instance
+   *
+   * @param {String} name Validator name
+   *
+   * @returns {validator}
+   */
+  getValidator(name) {
+    return this.routePlugin.getValidator(name)
+  }
 
   /**
    * Return a service instance

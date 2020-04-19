@@ -18,10 +18,9 @@ class TestValidator extends Validator {
   testServiceValidator() {
     return {
       test: {
-        errorMessage: 'Invalid test param.',
         custom: {
           options: async (value, { req, location, path }) => {
-            return this.testService.isValidTestParam(value)
+            if (!this.testService.isValidTestParam(value)) throw new Error('Invalid test param.')
           }
         }
       }

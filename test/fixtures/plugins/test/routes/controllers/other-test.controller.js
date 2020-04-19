@@ -6,8 +6,8 @@ class OtherTestController extends Controller {
     this.testService = testService
   }
 
-  test(req, res) {
-    const errors = this.getValidatorErrors(req)
+  async test(req, res) {
+    const errors = await this.getValidatorErrors(req)
     res.send({ result: 'other-test-contoller-test-route-result', errors })
   }
 }

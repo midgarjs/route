@@ -28,8 +28,8 @@ class TestRouter extends Router {
         method: 'post',
         validator: [body('email').isEmail().withMessage('Invalid email !')],
         path: '/test-validator-array-router',
-        action: (req, res) => {
-          const errors = this.getValidatorErrors(req)
+        action: async (req, res) => {
+          const errors = await this.getValidatorErrors(req)
           res.send({ result: 'test-router-validator-array-router', errors })
         }
       },
@@ -46,8 +46,8 @@ class TestRouter extends Router {
           }
         },
         path: '/test-validator-schema-router',
-        action: (req, res) => {
-          const errors = this.getValidatorErrors(req)
+        action: async (req, res) => {
+          const errors = await this.getValidatorErrors(req)
           res.send({ result: 'test-router-validator-schema-router', errors })
         }
       },
@@ -59,8 +59,8 @@ class TestRouter extends Router {
         method: 'post',
         validator: 'testSchema',
         path: '/test-validator-schema-validator',
-        action: (req, res) => {
-          const errors = this.getValidatorErrors(req)
+        action: async (req, res) => {
+          const errors = await this.getValidatorErrors(req)
           res.send({ result: 'test-router-validator-schema-validator', errors })
         }
       },

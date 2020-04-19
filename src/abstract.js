@@ -8,8 +8,8 @@ export default class Abstract {
    *
    * @return {Error}
    */
-  getValidatorErrors(req) {
-    const errors = validationResult(req)
+  async getValidatorErrors(req) {
+    const errors = await validationResult(req)
     if (!errors.isEmpty()) {
       return errors.array()
     } else {

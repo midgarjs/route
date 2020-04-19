@@ -52,7 +52,7 @@ describe('Controller', function () {
   /**
    * Test controller class
    */
-  it('Controller', async () => {
+  it('Router', async () => {
     // Test Instance abstract controller
     const router = new TestRouter(mid)
 
@@ -189,6 +189,7 @@ describe('Controller', function () {
       'test-router-validator-array-router',
       'Invalid POST /test-validator-array-router response !'
     )
+    console.log('body', res.body)
     expect(res.body.errors).to.be.eql(
       [{ msg: 'Invalid email !', param: 'email', location: 'body' }],
       'Invalid POST /test-validator-array-router response !'
