@@ -441,20 +441,31 @@ class RoutePlugin extends Plugin {
       }
     }
 
+    let action = null
     // Add controller action
     if (typeof route.action === 'string') {
-      const controller = router.controller
-      args.push((...args) => {
+      action = (...args) => router.controller[route.action](...args)
+      /*args.push(async (...args) => {
         this.mid.debug(`@midgar/route: Call controller route ${route.method} ${routePath}.`)
-        return controller[route.action](...args)
-      })
+          await controller[route.action](...args)
+      })*/
     } else {
+      action = (...args) => route.action(...args)
       // Or call action function
-      args.push((...args) => {
-        this.mid.debug(`@midgar/route: Call route  ${route.method} ${routePath}.`)
-        return route.action(...args)
-      })
+      // args.push(async (...args) => {
+      // this.mid.debug(`@midgar/route: Call route  ${route.method} ${routePath}.`)
+      // await route.action(...args)
+      // })
     }
+
+    args.push(async (req, res, next) => {
+      this.mid.debug(`@midgar/route: Call route  ${route.method} ${routePath}.`)
+      try {
+        await action(req, res, next)
+      } catch (error) {
+        this._error(error, res, route, next)
+      }
+    })
 
     // Decalare the route to express
     this.app[route.method](routePath, ...args)
@@ -487,6 +498,19 @@ class RoutePlugin extends Plugin {
     }
 
     return routePath
+  }
+
+  /**
+   * Default error handler
+   * @param {*} error
+   * @param {*} res
+   * @param {*} route
+   * @param {*} next
+   * @private
+   */
+  _error(error, res, route, next) {
+    this.mid.error(`@midgar/route: error in route ${route.method} ${route.path} !`)
+    next(error)
   }
 }
 
