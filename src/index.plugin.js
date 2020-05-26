@@ -441,10 +441,19 @@ class RoutePlugin extends Plugin {
       }
     }
 
+    let controller = null
+
+    if (route.controller) {
+      controller = this.getController(route.controller)
+    } else if (router.controller) {
+      controller = router.controller
+    }
+
     let action = null
     // Add controller action
     if (typeof route.action === 'string') {
-      action = (...args) => router.controller[route.action](...args)
+      if (!controller) throw new Error('No controller for route.')
+      action = (...args) => controller[route.action](...args)
       /*args.push(async (...args) => {
         this.mid.debug(`@midgar/route: Call controller route ${route.method} ${routePath}.`)
           await controller[route.action](...args)

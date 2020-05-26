@@ -125,12 +125,22 @@ class Router extends Abstract {
     if (route.method !== undefined && !this._methods.includes(route.method))
       throw new Error(`Invalid method ${route.method} !`)
 
+    if (route.controller !== undefined && typeof route.controller !== 'string') {
+      throw new Error(`Invalid controller type ${route.controller} !`)
+    }
+
     // check action
     if (route.action === undefined) throw new Error('Action is not defined !')
     if (typeof route.action === 'string') {
-      if (!this.controller) throw new Error('Invalid action type, controller is not set on router.')
+      if (!this.controller && route.controller === undefined)
+        throw new Error('Invalid action type, controller is not set on router.')
 
-      if (!this.controller[route.action]) throw new Error(`Unknow controller action ${route.action}.`)
+      let controller = this.controller
+      if (route.controller) {
+        controller = this.routePlugin.getController(route.controller)
+      }
+
+      if (!controller[route.action]) throw new Error(`Unknow controller action ${route.action}.`)
     } else if (typeof route.action !== 'function') {
       throw new Error('Invalid action type !')
     }
