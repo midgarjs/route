@@ -1,6 +1,6 @@
 {
   "name": "@midgar/route",
-  "version": "1.0.0-alpha.1.0",
+  "version": "1.0.0-beta.1.1",
   "description": "A Migdar plugin to load route",
   "main": "src/index.plugin.js",
   "module": "true",
@@ -17,10 +17,10 @@
     "url": "git+https://github.com/midgarjs/route.git"
   },
   "dependencies": {
-    "@midgar/express": "1.0.0-beta.1.0",
-    "@midgar/midgar": "1.0.0-beta.1.0",
-    "@midgar/service": "1.0.0-beta.1.0",
-    "@midgar/utils": "1.0.0",
+    "@midgar/express": "^1.0.0-beta.1.1",
+    "@midgar/midgar": "^1.0.0-beta.1.0",
+    "@midgar/service": "^1.0.0-beta.1.0",
+    "@midgar/utils": "^1.0.1",
     "express-validator": "^6.6.0",
     "htmlencode": "^0.0.4",
     "uid-safe": "^2.1.5"
