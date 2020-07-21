@@ -202,10 +202,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@midgar/express@1.0.0-beta.1.0":
-  version "1.0.0-beta.1.0"
-  resolved "https://registry.yarnpkg.com/@midgar/express/-/express-1.0.0-beta.1.0.tgz#24a9f9b93f2234f1b1a03982b70a5abf8dc32c03"
-  integrity sha512-BpgQS0oITdJtiu47+Konr6uMJ9nyZfH1wiSpIiXge2Ah9AEKqZr0UDRAHbPjipHozrQExFQvetWsmLVHJjsjsg==
+"@midgar/express@^1.0.0-beta.1.1":
+  version "1.0.0-beta.1.1"
+  resolved "https://registry.yarnpkg.com/@midgar/express/-/express-1.0.0-beta.1.1.tgz#3bf2179204201d9c963250ecd967740a302b02df"
+  integrity sha512-B+0w1ZYdCJAi0jhsOAQh1Pjl1jFt8WORj42FbtrGyBYJ4ml4dlYX9/Mw1bSplJ6gkSjpx58BRC0SlT9ChidD/w==
   dependencies:
     "@midgar/midgar" "1.0.0-beta.1.0"
     "@midgar/service" "1.0.0-beta.1.0"
@@ -237,7 +237,7 @@
     winston "^3.2.1"
     winston-daily-rotate-file "^4.4.2"
 
-"@midgar/service@1.0.0-beta.1.0":
+"@midgar/service@1.0.0-beta.1.0", "@midgar/service@^1.0.0-beta.1.0":
   version "1.0.0-beta.1.0"
   resolved "https://registry.yarnpkg.com/@midgar/service/-/service-1.0.0-beta.1.0.tgz#d095920421866ef3b7c28e4489a04a572b354aa4"
   integrity sha512-x+/jOhsvbFvJuCoZKHIClonM7/4hZNSRWM1jsJdDF5dp4Pe+2WUVxFfHqjUhkqofHXAmtQe0zMI9cPr8/KN5gg==
@@ -246,10 +246,15 @@
     "@midgar/utils" "^1.0.0"
     uid-safe "^2.1.5"
 
-"@midgar/utils@1.0.0", "@midgar/utils@^1.0.0":
+"@midgar/utils@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@midgar/utils/-/utils-1.0.0.tgz#ec2010e84b187bba70215142dcd54c0bc4bc77eb"
   integrity sha512-SOdXP9MWfNdLThgH3F2Jl3Pc2ZonAQrQi/JC8uNK2qbMTmW+0kwOYGaNcjsOQBD+WNePqtYHCiEQvrMzvtPqOg==
+
+"@midgar/utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@midgar/utils/-/utils-1.0.1.tgz#43c7cdd85cc9125c4e111dff38173be7afc67252"
+  integrity sha512-AQEZOPBm7JvY18w600I0tOrJfGqDxBxJqLg/MGpd7dOKgiWUli96m1ywbOyIQy3EaTxHXuPPqRQ8JhmLg+aPdQ==
 
 "@types/chai@4":
   version "4.2.11"
@@ -2213,9 +2218,9 @@ lodash.templatesettings@^4.0.0:
     lodash._reinterpolate "^3.0.0"
 
 lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@3.0.0:
   version "3.0.0"
